@@ -1,12 +1,18 @@
 import { Router } from 'express'
+import {
+  atualizarCarros,
+  cadastrarCarros,
+  detalharCarros,
+  excluirCarros,
+  listarCarros,
+} from './controladores/carros'
 
 const rotas = Router()
 
-//listagem de carros
-//detalhes carro
-//cadastro carro
-//atualizacao carro
-//exclusao carro
-rotas.get('/')
+rotas.get('/carros', listarCarros)
+rotas.get('/carros/:id', detalharCarros)
+rotas.post('/carros', cadastrarCarros)
+rotas.put('/carros/:id', atualizarCarros)
+rotas.delete('/carros/:id', excluirCarros)
 
 export default rotas
